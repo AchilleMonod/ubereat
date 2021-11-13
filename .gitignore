@@ -6,3 +6,10 @@ Back-jpa/.project
 Back-jpa/.settings/
 
 Back-jpa/target/
+/target/
+
+.settings/
+
+.classpath
+
+.project
