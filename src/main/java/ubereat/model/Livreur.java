@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 @Entity
+@PrimaryKeyJoinColumn(name="id_livreur")
 public class Livreur extends Utilisateur {
 @Enumerated(EnumType.STRING)
 private Transport transport;

@@ -6,7 +6,9 @@ import java.util.List;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 @Entity
+@PrimaryKeyJoinColumn(name="id_client")
 public class Client extends Utilisateur {
 	
 	private String cb;
