@@ -1,8 +1,10 @@
 package ubereat.model;
 
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
+@PrimaryKeyJoinColumn(name="id_restaurateur")
 public class Restaurateur extends Utilisateur{
 	
 private Restaurant restaurant;
