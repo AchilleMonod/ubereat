@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Version;
 
 @Entity
@@ -15,7 +15,7 @@ public class TypePlat {
 	@Version
 	private int version;
 	private String nom;
-	@OneToMany
+	@ManyToOne
 	private Article article;
 	
 	public TypePlat() {
