@@ -15,18 +15,18 @@ public class Client extends Utilisateur {
 	@OneToMany(mappedBy="client")
 	private List<Commande> commandes =new ArrayList<Commande>();
 	@Embedded
-	private List<Adresse> adresses =new ArrayList<Adresse>(); // to check ? 
-	
+	private Adresse adresse;
+	//private List<Adresse> adresses =new ArrayList<Adresse>(); // to check ? 
 	
 	public Client() {
 		super();
 	}
 	
-	public Client(String cb, List<Commande> commandes, List<Adresse> adresses) {
+	public Client(String cb, List<Commande> commandes, Adresse adresse) {
 		super();
 		this.cb = cb;
 		this.commandes = commandes;
-		this.adresses = adresses;
+		this.adresse = adresse;
 	}
 
 	public String getCb() {
@@ -41,11 +41,14 @@ public class Client extends Utilisateur {
 	public void setCommandes(List<Commande> commandes) {
 		this.commandes = commandes;
 	}
-	public List<Adresse> getAdresses() {
-		return adresses;
+
+	public Adresse getAdresse() {
+		return adresse;
 	}
-	public void setAdresses(List<Adresse> adresses) {
-		this.adresses = adresses;
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
 	}
+	
 
 }

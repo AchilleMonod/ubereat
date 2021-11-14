@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
@@ -30,10 +31,11 @@ public class Restaurant {
 	private double pricerage;
 	@Embedded
 	private Adresse adresse;
+	@OneToOne
     private Restaurateur restaurateur;
     @OneToMany(mappedBy= "restaurant")
     private List<TypeResto> typeRestos=new ArrayList<TypeResto>();
-    @OneToMany(mappedBy= "article")
+    @OneToMany(mappedBy= "restaurant")
     private List<Article> articles=new ArrayList<Article>();
     
     public Restaurant() {
