@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
@@ -20,22 +21,24 @@ public class Article {
 	private double prix;
 	private String description;
 	private String  img;
+	@ManyToOne
 	private Commande commande;
+	@ManyToOne
 	private Restaurant restaurant;
-	@OneToMany(mappedBy= "article")
-	private List<TypePlat> typePlats = new ArrayList<TypePlat>();
+	@ManyToOne
+	private TypePlat typePlat;
 	
 	public Article() {}
 	
 	public Article(double prix, String description, String img, Commande commande, Restaurant restaurant,
-			List<TypePlat> typePlats) {
+			TypePlat typePlat) {
 		super();
 		this.prix = prix;
 		this.description = description;
 		this.img = img;
 		this.commande = commande;
 		this.restaurant = restaurant;
-		this.typePlats = typePlats;
+		this.typePlat = typePlat;
 	}
 	public Long getId() {
 		return id;
@@ -79,12 +82,16 @@ public class Article {
 	public void setRestaurant(Restaurant restaurant) {
 		this.restaurant = restaurant;
 	}
-	public List<TypePlat> getTypePlats() {
-		return typePlats;
+
+	public TypePlat getTypePlat() {
+		return typePlat;
 	}
-	public void setTypePlats(List<TypePlat> typePlats) {
-		this.typePlats = typePlats;
+
+	public void setTypePlat(TypePlat typePlat) {
+		this.typePlat = typePlat;
 	}
+	
+	
 	
 	
 	
