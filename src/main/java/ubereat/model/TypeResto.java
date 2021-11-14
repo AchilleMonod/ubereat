@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
@@ -15,7 +16,7 @@ public class TypeResto {
 	@Version
 	private int version;
 	private String nom;
-	@OneToMany
+	@ManyToOne
 	private Restaurant restaurant;
 
 	public TypeResto() {}
