@@ -25,6 +25,7 @@ public class Article {
 	@OneToMany(mappedBy= "article")
 	private List<TypePlat> typePlats = new ArrayList<TypePlat>();
 	
+	public Article() {}
 	
 	public Article(double prix, String description, String img, Commande commande, Restaurant restaurant,
 			List<TypePlat> typePlats) {

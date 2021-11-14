@@ -7,6 +7,7 @@ public class Restaurateur extends Utilisateur{
 	
 private Restaurant restaurant;
 
+public Restaurateur() {}
 
 public Restaurateur(Restaurant restaurant) {
 	super();

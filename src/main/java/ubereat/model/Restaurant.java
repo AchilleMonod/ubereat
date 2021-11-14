@@ -36,6 +36,8 @@ public class Restaurant {
     @OneToMany(mappedBy= "article")
     private List<Article> articles=new ArrayList<Article>();
     
+    public Restaurant() {
+    }
     
 	public Restaurant(String nom, String img, String descrription) {
 		super();

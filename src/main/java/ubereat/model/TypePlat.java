@@ -5,15 +5,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 
 @Entity
 public class TypePlat {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Version
+	private int version;
 	private String nom;
 	@OneToMany
 	private Article article;
+	
+	public TypePlat() {
+	}
 	
 	public TypePlat(String nom, Article article) {
 		super();

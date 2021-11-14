@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,6 +20,7 @@ public class Commande {
 	@Version
 	private int version;
 	private double prix;
+	@Enumerated(EnumType.STRING)
 	private Status status;
 	private int tempsPrep;
 	private double rateResto;
@@ -27,6 +30,8 @@ public class Commande {
 	@OneToMany(mappedBy = "commande")
 	private List<Article> articles =new ArrayList<Article>();
 	
+	public Commande() {
+	}
 	
 	public Commande(double prix, Status status, int tempsPrep, double rateResto, double ratelivreur, Livreur livreur,
 			Client client, List<Article> articles) {
