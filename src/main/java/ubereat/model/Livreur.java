@@ -4,16 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
 @Entity
 public class Livreur extends Utilisateur {
-
+@Enumerated(EnumType.STRING)
 private Transport transport;
 private Double rate;
 @OneToMany(mappedBy ="livreur")
 private List<Commande> commandes = new ArrayList<Commande>();
 
 
+public Livreur() {}
 
 public Livreur(Transport transport) {
 	super();

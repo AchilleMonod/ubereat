@@ -5,16 +5,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 
 @Entity
 public class TypeResto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Version
+	private int version;
 	private String nom;
 	@OneToMany
 	private Restaurant restaurant;
 
+	public TypeResto() {}
+	
 	public TypeResto(String nom, Restaurant restaurant) {
 		super();
 		this.nom = nom;
